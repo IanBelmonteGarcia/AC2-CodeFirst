@@ -1,0 +1,54 @@
+﻿<Window x:Class="AC2_CodeFirst_IBelmonte_PBesalú.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AC2_CodeFirst_IBelmonte_PBesalú"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <TabControl>
+        <TabItem Header="ProductLines">
+            <DockPanel Background="BlueViolet">
+                <TextBlock DockPanel.Dock="Top" Text="ProductLines" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+                <DataGrid Margin="10"/>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="Products">
+            <DockPanel Background="BlueViolet">
+                <TextBlock DockPanel.Dock="Top" Text="Products" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+                <DataGrid/>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="Offices">
+            <DockPanel Background="BlueViolet">
+                <TextBlock DockPanel.Dock="Top" Text="Offices" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+                <DataGrid Margin="10"/>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="Employees">
+            <DockPanel Background="BlueViolet">
+                <TextBlock DockPanel.Dock="Top" Text="Employees" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+                <DataGrid Margin="10"/>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="Customers">
+            <DockPanel Background="BlueViolet">
+                <TextBlock DockPanel.Dock="Top" Text="Customers" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+                <DataGrid Margin="10"/>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="Payments">
+            <DockPanel Background="BlueViolet">
+                <TextBlock DockPanel.Dock="Top" Text="Payments" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+                <DataGrid Margin="10"/>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="OrderDetails">
+            <DockPanel Background="BlueViolet">
+                <TextBlock DockPanel.Dock="Top" Text="OrderDetails" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+                <DataGrid Margin="10"/>
+            </DockPanel>
+        </TabItem>
+    </TabControl>
+
+</Window>
