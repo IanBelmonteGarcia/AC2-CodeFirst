@@ -17,5 +17,12 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
         public DbSet<Payments> Payments { get; set; }
         public DbSet<ProductLines> ProductLines { get; set; }
         public DbSet<Products> Products { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseMySql("Server=localhost;Database=SHOP;Uid=root;Pwd=\"\"");
+            }
+        }
     }
 }
