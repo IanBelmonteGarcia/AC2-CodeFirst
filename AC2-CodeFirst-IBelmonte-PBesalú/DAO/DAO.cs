@@ -8,42 +8,42 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
 {
     class DAO : IDAO
     {
-        public void AddCustomer()
+        public void AddCustomer(string[] line)
         {
             throw new NotImplementedException();
         }
 
-        public void AddEmployee()
+        public void AddEmployee(string[] line)
         {
             throw new NotImplementedException();
         }
 
-        public void AddOffice()
+        public void AddOffice(string[] line)
         {
             throw new NotImplementedException();
         }
 
-        public void AddOrder()
+        public void AddOrder(string[] line)
         {
             throw new NotImplementedException();
         }
 
-        public void AddOrderDetail()
+        public void AddOrderDetail(string[] line)
         {
             throw new NotImplementedException();
         }
 
-        public void AddPayment()
+        public void AddPayment(string[] line)
         {
             throw new NotImplementedException();
         }
 
-        public void AddProduct()
+        public void AddProduct(string[] line)
         {
             throw new NotImplementedException();
         }
 
-        public void AddProductLine()
+        public void AddProductLine(string[] line)
         {
             throw new NotImplementedException();
         }
