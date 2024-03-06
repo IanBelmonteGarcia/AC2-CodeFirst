@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AC2_CodeFirst_IBelmonte_PBesalú.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,19 +13,20 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú
     public class Customers
     {
         [Key]
-        public int customerNumber { get; set; }
-        public string customerName { get; set; }
-        public string contactLastName { get; set; }
-        public string contactFirstName { get; set; }
-        public string phone { get; set; }
-        public string addressLine1 { get; set; }
-        public string addressLine2 { get; set; }
-        public string city { get; set; }
-        public string state { get; set; }
-        public string postalCode { get; set; }
-        public string country { get; set; }
+        public int CustomerNumber { get; set; }
+        public string CustomerName { get; set; }
+        public string ContactLastName { get; set; }
+        public string ContactFirstName { get; set; }
+        public string Phone { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string PostalCode { get; set; }
+        public string Country { get; set; }
         [ForeignKey("Employees")]
-        public int salesRepEmployeeNumber { get; set; }
-        public double creditLimit { get; set; }
+        public int SalesRepEmployeeNumber { get; set; }
+        public Employees Employees { get; set; }
+        public double CreditLimit { get; set; }
     }
 }

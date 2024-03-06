@@ -15,6 +15,6 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
         public string ProductLine { get; set; }
         public string TextDescription { get; set; }
         public string HtmlDescription { get; set; }
-        public byte[] Image { get; set; }
+        public string Image { get; set; }
     }
 }

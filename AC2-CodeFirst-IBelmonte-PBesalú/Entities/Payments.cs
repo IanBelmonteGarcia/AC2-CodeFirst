@@ -13,6 +13,7 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
     {
         [ForeignKey("Customers")]
         public int CustomerNumber { get; set; }
+        public Customers Customers { get; set; }
         public string CheckNumber { get; set; }
         public DateTime PaymentDate { get; set; }
         public double Amount { get; set; }

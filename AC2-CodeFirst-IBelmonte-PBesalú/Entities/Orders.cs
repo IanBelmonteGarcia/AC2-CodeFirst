@@ -20,5 +20,7 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
         public string Comments { get; set; }
         [ForeignKey("Customers")]
         public int CustomerNumber { get; set; }
+
+        public Customers Customers { get; set; }
     }
 }

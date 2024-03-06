@@ -15,7 +15,8 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
         [Key]
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
-        public string ProductLine { get; set; }
+        public ProductLines ProductLine { get; set; }
+        public string ProductLines { get; set; }
         public string ProductScale { get; set; }
         public string ProductVendor { get; set; }
         public string ProductDescription { get; set; }
