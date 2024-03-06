@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
 {
     [Table("OrderDetails")]
-    class OrderDetails : DbContext
+    public class OrderDetails : DbContext
     {
         [ForeignKey("Orders")]
         public int OrderNumber { get; set; }

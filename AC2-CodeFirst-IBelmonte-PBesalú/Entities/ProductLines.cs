@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
 {
     [Table("ProductLines")]
-    class ProductLines
+    public class ProductLines
     {
         [Key]
         public string ProductLine { get; set; }

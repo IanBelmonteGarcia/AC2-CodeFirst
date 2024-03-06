@@ -8,6 +8,12 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
 {
     class DAO : IDAO
     {
+        private Entities.DbContextIBPB _context;
+
+        public DAO(Entities.DbContextIBPB context)
+        {
+            this._context = context;
+        }
         public void AddCustomer(string[] line)
         {
             throw new NotImplementedException();

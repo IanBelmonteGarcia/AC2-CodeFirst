@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
 {
     [Table("Payments")]
-    class Payments : DbContext
+    public class Payments : DbContext
     {
         [ForeignKey("Customers")]
         public int CustomerNumber { get; set; }

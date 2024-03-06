@@ -8,9 +8,9 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
 {
     public class DAOFactory
     {
-        public static IDAO GetDAO()
+        public static IDAO GetDAO(Entities.DbContextIBPB context)
         {
-            return new DAO();
+            return new DAO(context);
         }
     }
 }

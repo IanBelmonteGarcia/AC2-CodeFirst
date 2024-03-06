@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
 {
-    class DbContextIBPB : DbContext
+    public class DbContextIBPB : DbContext
     {
         public DbSet<Customers> Customers { get; set; }
         public DbSet<Employees> Employees { get; set; }
