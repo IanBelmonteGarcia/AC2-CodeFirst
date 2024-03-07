@@ -53,7 +53,7 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
                         PostalCode = values[9],
                         Country = values[10],
                         SalesRepEmployeeNumber = (int)(string.IsNullOrWhiteSpace(values[11]) ? (int?)null : Convert.ToInt16(values[11])),
-                        CreditLimit = Convert.ToDouble(values[12])
+                        CreditLimit = Convert.ToDecimal(values[12])
                     };
                 });
 

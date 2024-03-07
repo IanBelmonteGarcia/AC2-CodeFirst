@@ -12,14 +12,31 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
     public class Offices
     {
         [Key]
+        [StringLength(10)]
         public string OfficeCode { get; set; }
+
+        [StringLength(10)]
         public string City { get; set; }
+
+        [StringLength(10)]
         public string Phone { get; set; }
+
+        [StringLength(10)]
         public string AddressLine1 { get; set; }
+
+        [StringLength(10)]
         public string AddressLine2 { get; set; }
+
+        [StringLength(10)]
         public string State { get; set; }
+
+        [StringLength(10)]
         public string Country { get; set; }
+
+        [StringLength(10)]
         public string PostalCode { get; set; }
+
+        [StringLength(10)]
         public string Territory { get; set; }
     }
 }

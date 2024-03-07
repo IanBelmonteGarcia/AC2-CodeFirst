@@ -9,6 +9,17 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
 {
     public class DbContextIBPB : DbContext
     {
+        public DbContextIBPB() {}
+        public DbContextIBPB(DbContextOptions<DbContextIBPB> options) : base(options) { }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseMySql("Server=localhost;Database=COMPANYGZOP;Uid=root;Pwd=\"\"");
+            }
+        }
+
         public DbSet<Customers> Customers { get; set; }
         public DbSet<Employees> Employees { get; set; }
         public DbSet<Offices> Offices { get; set; }
@@ -17,12 +28,6 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
         public DbSet<Payments> Payments { get; set; }
         public DbSet<ProductLines> ProductLines { get; set; }
         public DbSet<Products> Products { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseMySql("Server=localhost;Database=SHOP;Uid=root;Pwd=\"\"");
-            }
-        }
+
     }
 }

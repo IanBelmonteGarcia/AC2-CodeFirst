@@ -12,9 +12,16 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
     public class ProductLines
     {
         [Key]
+        [StringLength(50)]
         public string ProductLine { get; set; }
+
+        [StringLength(50)]
         public string TextDescription { get; set; }
+
+        [StringLength(50)]
         public string HtmlDescription { get; set; }
+
+        [StringLength(50)]
         public string Image { get; set; }
     }
 }

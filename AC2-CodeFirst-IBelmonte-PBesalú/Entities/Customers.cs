@@ -13,20 +13,45 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú
     public class Customers
     {
         [Key]
+        [Column(TypeName = "int(11)")]
         public int CustomerNumber { get; set; }
+        
+        [StringLength(50)]
         public string CustomerName { get; set; }
+
+        [StringLength(50)]
         public string ContactLastName { get; set; }
+
+        [StringLength(50)]
         public string ContactFirstName { get; set; }
+
+        [StringLength(50)]
         public string Phone { get; set; }
+
+        [StringLength(50)]
         public string AddressLine1 { get; set; }
+
+        [StringLength(50)]
         public string AddressLine2 { get; set; }
+
+        [StringLength(50)]
         public string City { get; set; }
+
+        [StringLength(50)]
         public string State { get; set; }
+
+        [StringLength(50)]
         public string PostalCode { get; set; }
+
+        [StringLength(50)]
         public string Country { get; set; }
-        [ForeignKey("Employees")]
+
+        [Column(TypeName = "int(11)")]
         public int SalesRepEmployeeNumber { get; set; }
+
         public Employees Employees { get; set; }
-        public double CreditLimit { get; set; }
+
+        [Column(TypeName = "decimal(10,2)")]
+        public decimal CreditLimit { get; set; }
     }
 }
