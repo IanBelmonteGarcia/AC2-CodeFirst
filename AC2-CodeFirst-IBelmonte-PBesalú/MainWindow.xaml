@@ -10,43 +10,43 @@
         <TabItem Header="ProductLines">
             <DockPanel Background="BlueViolet">
                 <TextBlock DockPanel.Dock="Top" Text="ProductLines" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
-                <DataGrid Margin="10"/>
+                <DataGrid Margin="10" Name="dgProductLines"/>
             </DockPanel>
         </TabItem>
         <TabItem Header="Products">
             <DockPanel Background="BlueViolet">
                 <TextBlock DockPanel.Dock="Top" Text="Products" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
-                <DataGrid/>
+                <DataGrid Margin="10" Name="dgProducts"/>
             </DockPanel>
         </TabItem>
         <TabItem Header="Offices">
             <DockPanel Background="BlueViolet">
                 <TextBlock DockPanel.Dock="Top" Text="Offices" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
-                <DataGrid Margin="10"/>
+                <DataGrid Margin="10" Name="dgOffices"/>
             </DockPanel>
         </TabItem>
         <TabItem Header="Employees">
             <DockPanel Background="BlueViolet">
                 <TextBlock DockPanel.Dock="Top" Text="Employees" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
-                <DataGrid Margin="10"/>
+                <DataGrid Margin="10" Name="dgEmployees"/>
             </DockPanel>
         </TabItem>
         <TabItem Header="Customers">
             <DockPanel Background="BlueViolet">
                 <TextBlock DockPanel.Dock="Top" Text="Customers" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
-                <DataGrid Margin="10"/>
+                <DataGrid Margin="10" Name="dgCustomers"/>
             </DockPanel>
         </TabItem>
         <TabItem Header="Payments">
             <DockPanel Background="BlueViolet">
                 <TextBlock DockPanel.Dock="Top" Text="Payments" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
-                <DataGrid Margin="10"/>
+                <DataGrid Margin="10" Name="dgPayments"/>
             </DockPanel>
         </TabItem>
         <TabItem Header="OrderDetails">
             <DockPanel Background="BlueViolet">
                 <TextBlock DockPanel.Dock="Top" Text="OrderDetails" FontSize="30" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
-                <DataGrid Margin="10"/>
+                <DataGrid Margin="10" Name="dgOrderDetails"/>
             </DockPanel>
         </TabItem>
     </TabControl>

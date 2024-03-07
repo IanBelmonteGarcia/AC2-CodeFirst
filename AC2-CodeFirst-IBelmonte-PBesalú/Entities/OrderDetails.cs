@@ -28,11 +28,5 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
 
         [Column(TypeName = "int(11)")]
         public int OrderLineNumber { get; set; }
-
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<OrderDetails>().HasKey(p => new { p.OrderNumber, p.ProductCode });
-        }
     }
 }

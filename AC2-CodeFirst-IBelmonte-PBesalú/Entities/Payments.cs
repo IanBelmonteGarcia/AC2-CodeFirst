@@ -26,10 +26,5 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
 
         [Column(TypeName = "decimal(10,2)")]
         public double Amount { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Payments>().HasKey(p => new { p.CustomerNumber, p.CheckNumber });
-        }
     }
 }

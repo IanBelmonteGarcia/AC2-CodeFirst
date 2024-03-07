@@ -16,8 +16,15 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.Entities
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("Server=localhost;Database=COMPANYGZOP;Uid=root;Pwd=\"\"");
+                optionsBuilder.UseMySql("Server=localhost;Database=SHOP;Uid=root;Pwd=;",
+                    ServerVersion.AutoDetect("Server=localhost;Database=SHOP;Uid=root;Pwd=;"));
+
             }
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<OrderDetails>().HasKey(p => new { p.OrderNumber, p.ProductCode });
+            modelBuilder.Entity<Payments>().HasKey(p => new { p.CustomerNumber, p.CheckNumber });
         }
 
         public DbSet<Customers> Customers { get; set; }

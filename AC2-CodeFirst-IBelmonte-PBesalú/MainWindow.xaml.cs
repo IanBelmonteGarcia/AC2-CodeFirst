@@ -19,6 +19,9 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú
         public MainWindow()
         {
             InitializeComponent();
+            DAO.IDAO dao = DAO.DAOFactory.GetDAO(new Entities.DbContextIBPB());
+            dao.Import();
+            
         }
     }
 }
