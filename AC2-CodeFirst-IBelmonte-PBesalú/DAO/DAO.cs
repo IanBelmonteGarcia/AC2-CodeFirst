@@ -27,6 +27,10 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
             this._context = context;
         }
 
+        /// <summary>
+        /// adds customers to the database
+        /// </summary>
+        /// <exception cref="FileNotFoundException"></exception>
         public void AddCustomer()
         {
             if (!File.Exists(CUSTOMERS_CSV))
@@ -89,6 +93,10 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
             }
         }
 
+        /// <summary>
+        /// adds employees to the database
+        /// </summary>
+        /// <exception cref="FileNotFoundException"></exception>
         public void AddEmployee()
         {
             if (!File.Exists(EMPLOYEES_CSV))
@@ -123,6 +131,10 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
             }
         }
 
+        /// <summary>
+        /// adds offices to the database
+        /// </summary>
+        /// <exception cref="FileNotFoundException"></exception>
         public void AddOffice()
         {
             if (!File.Exists(OFFICES_CSV))
@@ -171,6 +183,10 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
             }
         }
 
+        /// <summary>
+        /// adds orders to the database
+        /// </summary>
+        /// <exception cref="FileNotFoundException"></exception>
         public void AddOrder()
         {
             if (!File.Exists(ORDERS_CSV))
@@ -203,6 +219,10 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
             }
         }
 
+        /// <summary>
+        /// adds order details to the database
+        /// </summary>
+        /// <exception cref="FileNotFoundException"></exception>
         public void AddOrderDetail()
         {
             if (!File.Exists(ORDERS_CSV))
@@ -259,6 +279,10 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
             }
         }
 
+        /// <summary>
+        /// adds payments to the database
+        /// </summary>
+        /// <exception cref="FileNotFoundException"></exception>
         public void AddPayment()
         {
             if (!File.Exists(PAYMENTS_CSV))
@@ -312,6 +336,10 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
             }
         }
 
+        /// <summary>
+        /// adds products to the database
+        /// </summary>
+        /// <exception cref="FileNotFoundException"></exception>
         public void AddProduct()
         {
             if (!File.Exists(PRODUCTS_CSV))
@@ -370,6 +398,10 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
             }
         }
 
+        /// <summary>
+        /// adds product lines to the database
+        /// </summary>
+        /// <exception cref="FileNotFoundException"></exception>
         public void AddProductLine()
         {
             if (!File.Exists(PRODUCTLINES_CSV))
@@ -398,6 +430,9 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
             }
         }
 
+        /// <summary>
+        /// Importing data from CSV files to the database
+        /// </summary>
         public void Import()
         {
             AddCustomer();
@@ -409,5 +444,144 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
             AddProduct();
             AddProductLine();
         }
+
+        /// <summary>
+        /// quering employees
+        /// </summary>
+        public void QueringEmployees()
+        {
+            var employees = from e in _context.Employees select e;
+        }
+
+        /// <summary>
+        /// quering customers
+        /// </summary>
+        public void QueringCustomers()
+        {
+            var customers = from c in _context.Customers select c;
+        }
+
+        /// <summary>
+        /// quering offices
+        /// </summary>
+        public void QueringOffices()
+        {
+            var offices = from o in _context.Offices select o;
+        }
+
+        /// <summary>
+        /// sorting employees by last name
+        /// </summary>
+        public void SortingEmployeesByLastName()
+        {
+            var employees = from e in _context.Employees orderby e.LastName select e;
+        }
+
+        /// <summary>
+        /// filtering employees by office code
+        /// </summary>
+        public void FilteringEmployeesByOfficeCode()
+        {
+            var employees = from e in _context.Employees where e.OfficeCode == "1" select e;
+        }
+
+        /// <summary>
+        /// group employees by office code
+        /// </summary>
+        public void GroupingEmployeesByOfficeCode()
+        {
+            var employees = from e in _context.Employees group e by e.OfficeCode;
+        }
+
+        /// <summary>
+        /// join employees and offices
+        /// </summary>
+        public void JoiningEmployeesAndOffices()
+        {
+            var employees = from e in _context.Employees
+                            join o in _context.Offices on e.OfficeCode equals o.OfficeCode
+                            select new
+                            {
+                                e.LastName,
+                                e.FirstName,
+                                e.JobTitle,
+                                o.City
+                            };
+        }
+
+        /// <summary>
+        /// join employees and customers
+        /// </summary>
+        public void JoiningEmployeesAndCustomers()
+        {
+            var employees = from e in _context.Employees
+                            join c in _context.Customers on e.EmployeeNumber equals c.SalesRepEmployeeNumber
+                            select new
+                            {
+                                e.LastName,
+                                e.FirstName,
+                                e.JobTitle,
+                                c.CustomerName
+                            };
+        }
+
+        /// <summary>
+        /// join employees and customers, group by employee number
+        /// </summary>
+        public void JoiningEmployeesAndCustomersGroupingByEmployeeNumber()
+        {
+            var employees = from e in _context.Employees
+                            join c in _context.Customers on e.EmployeeNumber equals c.SalesRepEmployeeNumber
+                            group c by e.EmployeeNumber;
+        }
+
+        /// <summary>
+        /// join employees and customers, group by employee number and count customers
+        /// </summary>
+        public void JoiningEmployeesAndCustomersGroupingByEmployeeNumberAndCountingCustomers()
+        {
+            var employees = from e in _context.Employees
+                            join c in _context.Customers on e.EmployeeNumber equals c.SalesRepEmployeeNumber
+                            group c by e.EmployeeNumber into g
+                            select new
+                            {
+                                EmployeeNumber = g.Key,
+                                CustomerCount = g.Count()
+                            };
+        }
+
+        /// <summary>
+        /// join employees and customers, group by employee number and count customers having more than one customer
+        /// </summary>
+        public void JoiningEmployeesAndCustomersGroupingByEmployeeNumberAndCountingCustomersHavingMoreThanOneCustomer()
+        {
+            var employees = from e in _context.Employees
+                            join c in _context.Customers on e.EmployeeNumber equals c.SalesRepEmployeeNumber
+                            group c by e.EmployeeNumber into g
+                            where g.Count() > 1
+                            select new
+                            {
+                                EmployeeNumber = g.Key,
+                                CustomerCount = g.Count()
+                            };
+        }
+
+        /// <summary>
+        /// n
+        /// </summary>
+        public void NavigatingAmongstEntities()
+        {
+            var employees = from e in _context.Employees
+                            join c in _context.Customers on e.EmployeeNumber equals c.SalesRepEmployeeNumber
+                            select new
+                            {
+                                e.LastName,
+                                e.FirstName,
+                                e.JobTitle,
+                                c.CustomerName
+                            };
+        }
+
+
     }
 }
