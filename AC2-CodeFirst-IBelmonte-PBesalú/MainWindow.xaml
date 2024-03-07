@@ -49,6 +49,11 @@
                 <DataGrid Margin="10" Name="dgOrderDetails"/>
             </DockPanel>
         </TabItem>
+        <TabItem Header="Querys">
+            <StackPanel>
+                <Button x:Name="queryButton" Content="QUERY" Click="queryButton_Click"/>
+            </StackPanel>
+        </TabItem>
     </TabControl>
 
 </Window>

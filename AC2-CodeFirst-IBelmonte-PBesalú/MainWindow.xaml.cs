@@ -16,11 +16,15 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú
     /// </summary>
     public partial class MainWindow : Window
     {
+        DAO.IDAO dao = DAO.DAOFactory.GetDAO(new Entities.DbContextIBPB());
         public MainWindow()
         {
             InitializeComponent();
-            DAO.IDAO dao = DAO.DAOFactory.GetDAO(new Entities.DbContextIBPB());
             dao.Import();
+        }
+
+        private void queryButton_Click(object sender, RoutedEventArgs e)
+        {
             
         }
     }

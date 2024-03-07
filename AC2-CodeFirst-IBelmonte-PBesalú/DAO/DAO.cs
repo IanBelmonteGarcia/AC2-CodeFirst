@@ -13,14 +13,14 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
     {
         private Entities.DbContextIBPB _context;
 
-        private const string EMPLOYEES_CSV = "EMPLOYEES.csv";
-        private const string CUSTOMERS_CSV = "CUSTOMERS.csv";
-        private const string OFFICES_CSV = "OFFICES.csv";
-        private const string ORDERDETAILS_CSV = "ORDERDETAILS.csv";
-        private const string ORDERS_CSV = "ORDERS.csv";
-        private const string PAYMENTS_CSV = "PAYMENTS.csv";
-        private const string PRODUCTLINES_CSV = "PRODUCTLINES.csv";
-        private const string PRODUCTS_CSV = "PRODUCTS.csv";
+        private const string EMPLOYEES_CSV = "C:\\Programació\\AC2-CodeFirst-IBelmonte-PBesalú\\AC2-CodeFirst-IBelmonte-PBesalú\\FITXERSCSV\\EMPLOYEES.csv";
+        private const string CUSTOMERS_CSV = "C:\\Programació\\AC2-CodeFirst-IBelmonte-PBesalú\\AC2-CodeFirst-IBelmonte-PBesalú\\FITXERSCSV\\CUSTOMERS.csv";
+        private const string OFFICES_CSV = "C:\\Programació\\AC2-CodeFirst-IBelmonte-PBesalú\\AC2-CodeFirst-IBelmonte-PBesalú\\FITXERSCSV\\OFFICES.csv";
+        private const string ORDERDETAILS_CSV = "C:\\Programació\\AC2-CodeFirst-IBelmonte-PBesalú\\AC2-CodeFirst-IBelmonte-PBesalú\\FITXERSCSV\\ORDERDETAILS.csv";
+        private const string ORDERS_CSV = "C:\\Programació\\AC2-CodeFirst-IBelmonte-PBesalú\\AC2-CodeFirst-IBelmonte-PBesalú\\FITXERSCSV\\ORDERS.csv";
+        private const string PAYMENTS_CSV = "C:\\Programació\\AC2-CodeFirst-IBelmonte-PBesalú\\AC2-CodeFirst-IBelmonte-PBesalú\\FITXERSCSV\\PAYMENTS.csv";
+        private const string PRODUCTLINES_CSV = "C:\\Programació\\AC2-CodeFirst-IBelmonte-PBesalú\\AC2-CodeFirst-IBelmonte-PBesalú\\FITXERSCSV\\PRODUCTLINES.csv";
+        private const string PRODUCTS_CSV = "C:\\Programació\\AC2-CodeFirst-IBelmonte-PBesalú\\AC2-CodeFirst-IBelmonte-PBesalú\\FITXERSCSV\\PRODUCTS.csv";
 
         public DAO(Entities.DbContextIBPB context)
         {
@@ -45,7 +45,7 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
                     var values = line.Split(',');
                     return new Customers
                     {
-                        CustomerNumber = Convert.ToInt16(values[0]),
+                        CustomerNumber = Convert.ToInt32(values[0]),
                         CustomerName = values[1],
                         ContactLastName = values[2],
                         ContactFirstName = values[3],
@@ -56,7 +56,7 @@ namespace AC2_CodeFirst_IBelmonte_PBesalú.DAO
                         State = values[8],
                         PostalCode = values[9],
                         Country = values[10],
-                        SalesRepEmployeeNumber = (int)(string.IsNullOrWhiteSpace(values[11]) ? (int?)null : Convert.ToInt16(values[11])),
+                        SalesRepEmployeeNumber = (int)(string.IsNullOrWhiteSpace(values[11]) ? (int?)null : Convert.ToInt32(values[11])),
                         CreditLimit = Convert.ToDecimal(values[12])
                     };
                 });
